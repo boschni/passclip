@@ -1,0 +1,1 @@
+complete -o filenames -o nospace -F _pass passclip
