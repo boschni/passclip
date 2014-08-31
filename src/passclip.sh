@@ -34,7 +34,8 @@ clip() {
 	echo "Copied $2 to clipboard. Will clear in $CLIP_TIME seconds."
 }
 
-source "$(dirname "$0")/platform/$(uname | cut -d _ -f 1 | tr '[:upper:]' '[:lower:]').sh" 2>/dev/null # PLATFORM_FUNCTION_FILE
+DIR="$(dirname "$(readlink "$0")")"
+source "$DIR/platform/$(uname | cut -d _ -f 1 | tr '[:upper:]' '[:lower:]').sh" 2>/dev/null # PLATFORM_FUNCTION_FILE
 
 #
 # END platform definable
